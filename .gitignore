@@ -104,4 +104,4 @@ venv.bak/
 .mypy_cache/
 
 
-scripts/key_private.txt
+scripts/keys_private.txt
