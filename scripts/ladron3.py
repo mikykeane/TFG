@@ -17,24 +17,23 @@ import datetime
 
 # Conectamos MongoDB la base de datos "TwitterStream"
 connection = MongoClient('localhost', 27017)
-db = connection.TwitterYT2108
-db.tweets.ensure_index("id", unique=True, dropDups=True)
+db = connection.TwitterRTVE2808
+db.tweets.create_index("id", unique=True, dropDups=True)
 collection = db.tweets
 
 
 
 # Apartado que estaremos modificando constantemente. Palabras claves a descargar. Tambien sirven hashtags
 #keywords = ['#wine', 'wine','claret', 'chardonnay', 'sauvignon', 'merlot', 'pinot noir', 'carbenet sauvignon', 'gewurztraimer', 'riesling' ]
-keywords = ['YouTube' ]
+keywords = ['RTVE' ]
 # Idioma en que descargo. De momento ingles, pero trivial de cambiar si deseo
-language = ['en']
+language = ['es']
 
 # Mis claves personales de twitter. Si no puedo descargar mas tendre que usar otras cuentas para ir descargando en orden
-consumer_key = "TOKEN"
-consumer_secret = "TOKEN"
-access_token = "TOKEN"
-access_token_secret = "YOUR TOKEN"
-
+consumer_key = "QP2e7jAq8uFovjeXcg9flSYKN"
+consumer_secret = "dode0ExemNHGN29gBJYazgad2QlrOllH9AqR1AKAQgvXJ1veTh"
+access_token = "381614868-TLNz2v5Q4zPhLbHQ6meJ3YDWpwXveWzdx40DzVXO"
+access_token_secret = "y4DpePPz2YVXaLtNazPfs5i7UuRb1AYQOfgFGrTobSrGc"
 # Aqui indicamos que solo decargue los tweets que encajen con mis keywords
 class StdOutListener(StreamListener):
 
@@ -67,7 +66,7 @@ class StdOutListener(StreamListener):
             tweet = {'id':tweet_id, 'username':username, 'followers':followers, 'text':text, 'hashtags':hashtags, 'language':language, 'time_for_mongo':time_for_mongo}
 
             # Guardo el tweet completo en MongoDB
-            collection.save(tweet)
+            collection.insert_one(tweet)
 
 
             del tweet
@@ -82,7 +81,7 @@ class StdOutListener(StreamListener):
 
 
     def on_error(self, status):
-        print status
+        print (status)
 
 
 # Aqui se realiza la coneccion gracias a Tweepy con mis claves

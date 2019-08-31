@@ -21,7 +21,7 @@ import os.path
 
 # Conectamos MongoDB la base de datos "TwitterStream"
 connection = MongoClient('localhost', 27017)
-db = connection.TwitterYT2108
+db = connection.TwitterJdT
 db.tweets.create_index("id", unique=True, dropDups=True)
 collection = db.tweets
 collection2 = db.concepts
@@ -36,8 +36,8 @@ headers = {'content-type': 'application/x-www-form-urlencoded'}
 
 
 #Me aserguro que el archivo no exista previamente, para no escribir varias veces los titulos
-if not os.path.exists('data/YT2108.csv'):
-    with open('data/YT2108.csv', 'w') as csvfile:
+if not os.path.exists('data/JdT-score.csv'):
+    with open('data/JdT-score.csv', 'w') as csvfile:
         filewriter = csv.writer(csvfile, delimiter=',')
         filewriter.writerow(['Username', 'Followers', 'Confidence', 'Score_tag', 'Agreement', 'Subjectivity', 'Irony', 'Tweet'])
 #
@@ -55,7 +55,7 @@ for cursor in db.tweets.find():
 
           print (username + ': ' + tweet)
           #payload= "key="+key+"&lang="+lang+"&txt="+txt
-          payload = "key=YOUR_KEYe&lang=en&of=json&txt= %s &txtf=plain&url=YOUR_URL_VALUE&doc=YOUR_DOC_VALUE" %(tweet)
+          payload = "key=884a3e5168cf038e1468de90c0a6feab&lang=en&of=json&txt= %s &txtf=plain&url=YOUR_URL_VALUE&doc=YOUR_DOC_VALUE" %(tweet)
           confidence= 0
           #Manejo excepciones por si la conexion da error que siga analizando la base de datos MongoDB
           try:
@@ -82,7 +82,7 @@ for cursor in db.tweets.find():
                             print("\n\n\n\n\n\nError al guardar en la base de datos MongoDB\n\n\n\n\n\n")
 
                       #El parametro a es para "append", para actualizar el csv en vez de sobrescribirlo
-                      with open('data/YT2108.csv', 'a') as csvfile:
+                      with open('data/JdT-score.csv', 'a') as csvfile:
                           filewriter = csv.writer(csvfile, delimiter=',')
                           filewriter.writerow([username, followers, confidence, score_tag, agreement, subjectivity, irony, quoted_tweet])
 
@@ -92,5 +92,5 @@ for cursor in db.tweets.find():
           except ValueError:
             print("\nException: Failed request to API in meaningcloud. Wrong characters.")
 
-      elif username== "CazallaLiebana":
+      elif username== "fbaa97":
           control=True

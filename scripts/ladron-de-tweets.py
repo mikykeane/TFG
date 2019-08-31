@@ -18,7 +18,7 @@ import datetime
 # Conectamos MongoDB la base de datos "TwitterStream"
 connection = MongoClient('localhost', 27017)
 db = connection.TwitterNetflix2108
-db.tweets.ensure_index("id", unique=True, dropDups=True)
+db.tweets.create_index("id", unique=True, dropDups=True)
 collection = db.tweets
 
 
@@ -68,7 +68,7 @@ class StdOutListener(StreamListener):
                 tweet = {'id':tweet_id, 'username':username, 'followers':followers, 'text':text, 'hashtags':hashtags, 'language':language, 'time_for_mongo':time_for_mongo}
 
                 # Guardo el tweet completo en MongoDB
-                collection.save(tweet)
+                collection.insert_one(tweet)
             except:
                 print("\nDuplicate Key Error\n")
 

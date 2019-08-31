@@ -19,14 +19,10 @@ from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 
 import matplotlib.pyplot as plt
 
-df = pd.read_csv("data/JdT.csv")
 
 
 
-
-#score = df.groupby("Score_tag")
-
-#print(score.describe())
+#
 
 
 """
@@ -40,12 +36,18 @@ plt.show()
 """
 
 
+df = pd.read_csv("data/JdT.csv")
+
+#score = df.groupby("Score_tag")
+#print(score.describe())
+
 text = " ".join(text for text in df.Text)
 
 print("Hay {} palabras en la combinacion de todos los tweets.".format(len(text)))
 
+netflix_mask = np.array(Image.open("img/logohbo.jpg"))
 
-netflix_mask = np.array(Image.open("img/icono.jpg"))
+
 #netflix_mask= convert_image("logo.png")
 #converted = pure_pil_alpha_to_color_v2(image)
 
@@ -55,11 +57,12 @@ netflix_mask = np.array(Image.open("img/icono.jpg"))
 
 # Create stopword list:
 stopwords = set(STOPWORDS)
-stopwords.update(["RT", "amp", "co", "https"])
+stopwords.update(["Sa4K2Wca8B", "RT", "DNCNwIZDRZ", "12sSdRD08Oo" "amp", "co", "https"])
 
 # Generate a word cloud image
 #wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
-wordcloud = WordCloud(background_color="white", max_words=10000, mask=netflix_mask, stopwords=stopwords, contour_width=3, contour_color='black')
+wordcloud = WordCloud(background_color="white", max_words=10000, mask=netflix_mask,
+                        stopwords=stopwords, contour_width=3, contour_color='black')
 
 wordcloud.generate(text)
 
