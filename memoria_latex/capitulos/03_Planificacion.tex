@@ -21,7 +21,13 @@ Finalmente, se ha optado por la realización de un diagrama de Gantt para hacer 
 
 \subsection{Desarrollo}
 
-En esta fase será para hacer el desarrollo software correspondiente, crear los scripts que sean necesarios para obtener la información, para llevarla a analizar y para procesarla, todo mientras la información obtenida como los resultados de los análisis se almacene correctamente. 
+En esta fase será para hacer el desarrollo software correspondiente, crear los scripts que sean necesarios para obtener la información, para llevarla a analizar y para procesarla, todo mientras la información obtenida como los resultados de los análisis se almacene correctamente.
+
+Para esto se hará un primer script, que obtendrá la información desde la API de Twitter y la almacenará en una base de datos MongoDB. 
+
+Posteriormente será necesario otro script que tenga acceso a la información analizada en la base de datos, la pueda mandar a analizar con la API de MeaningCloud y almacene estos resultados en un formato para su posterior uso, como puede ser CSV. 
+
+Además haremos otros scripts para analizar la información obtenida, usar algoritmos para crear imágenes y WordClouds.  
 
 \subsection{Obtención de información}
 
@@ -30,7 +36,7 @@ Una vez desarrollados los primeros scripts, haré uso de los métodos la API de 
 \subsection{Análisis de resultados}
 
 Cuando ya disponemos de la información deseada, desde la propia base de datos MongoDB enviaremos la información a la API de MeaningCloud. La cual será procesada y la respuesta la almacenaremos doblemente, en una base de datos MongoDB por si requerimos de analizarla de nuevo y en un fichero CSV, el cual es ideal para luego poder analizar los resultados. Además en esta fase se desarrollará un script que pueda crear nubes con las palabras más utilizadas en la información descargada. También se tratará de obtener conclusiones sobre los datos obtenidos que puedan ser prácticas para una empresa. 
-Es importante notar que en la versión gratuita de MeaningCloud solo tendremos 20000 créditos para gastar. Por cada tweet, debido a su longitud se gastará un crédito por tweet analizado. 
+Es importante notar que en la versión gratuita de MeaningCloud solo tendremos 20000 créditos para gastar. Por cada tweet, debido a su longitud se gastará un crédito por tweet analizado, por lo que no se deberán malgastar los créditos, pues se disponen de 20mil, aunque probablemente sea posible obtener otra clave extra. 
 
 
 
