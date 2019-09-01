@@ -1,0 +1,430 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TFG: Vigilancia Tecnológica y Minería de Opiniones en RRSS
+% Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación
+% Realizado por: Miguel Keane Cañizares
+% Contacto: miguekeca@correo.ugr.es 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Resultados}
+
+De los varios scripts implementados, se han obtenido una gran gama de resultados. Las pruebas han ido orientadas hacia los servicios de Streaming Online, debido a que hoy en día son empresas que están a la orden del día y generan gran actividad en las redes sociales. Debido al deseo de buscar una finalidad práctica para hacer estudios de mercado y al hecho de que se podían hacer dos escuchas simultáneas se ha hecho en formato de \"carreras\", es decir, a la hora de analizar HBO y Netflix, se han hecho la obtención de tweets simultáneas, para poder también juzgar que plataformas generan más tráfico en las redes sociales en los tiempos escuchados. 
+
+En total fueron bastantes las bases de datos generadas con las diferentes pruebas, el resultado que se puede apreciar en MongoDB es el siguiente:
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.6]{imagenes/BD-Mongo.png}
+	\caption{Diferentes BD generadas en MongoDB}
+	\label{fig:BD-MongoDB}
+\end{figure}
+
+
+\section{Análisis de Netflix y HBO}
+Al ser las dos plataformas principales y principales competencias entre sí, han sido el objeto principal de las pruebas del proyecto. 
+
+La primera competencia fue el día 13 de Agosto, de 22h a 1h. Tres horas donde fueron descargados por separados aquellos tweets que mencionaban Netflix y los que mencionaban a HBO, guardados en diferentes bases de datos. 
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{c c}
+		
+		\includegraphics[scale=.62]{imagenes/HBO1308Mongo.png}
+		&  \includegraphics[scale=.65]{imagenes/Netflix1308Mongo.png} \\ 
+		
+		{BD de HBO1308}
+		
+		&  {BD de Netflix1308} \\ 
+		
+	\end{tabular} 
+	\label{fig:Mongo1308}
+\end{figure}
+
+Aquí podemos apreciar dos colecciones en cada base de datos. La primera \textit{tweets} son el total de tweets capturados por el \textit{ladrón de tweets}, la otra \textit{concepts} son el resultados del análisis de haberlo enviado a MeaningCloud con el \textit{analisis-sentimientos-mongo}. Lo principal que se puede apreciar es que Netflix tiene mucha más presencia en redes que HBO, puesto que es mencionado más de 5 veces por cada vez que se menciona a HBO. 
+
+Tambiés es notable como el número de tweets que han sido analizados es mucho más bajo que los capturados. Esto es debido principalmente a que MeaningCloud no admite emojis en su análisis y siendo estos tan presentes en las redes hay una notable pérdida de información a la hora de analizarla. En este caso los tweets de HBO han tenido una tasa del 66,7\% de tweets analizables mientras que Netflix tiene una tasa del 64\%. La diferencia es casi despreciable. 
+
+
+Pasando a analizar los resultados del análisis de sentimientos, obtenemos lo siguiente. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/porcentaje-HBO1308.PNG}
+	\caption{Porcentaje de HBO1308}
+	\label{fig:porcentaje-HBO1308}
+\end{figure}
+
+La razón por la que en el total de aparece la cifra de 339 en vez de 541 es porque 202 tweets han sido clasificados como NONE, es decir, sin ninguna polaridad emocional detectada. Del total esto correspondería al 37\% de los tweets analizados
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/PorcentajesNetflix1308.PNG}
+	\caption{Porcentaje de Netflix1308}
+	\label{fig:porcentaje-Netflix1308}
+\end{figure}
+
+
+En Netflix el 38\% de los tweets analizados no tenían polaridad. Equivalente a 1269 tweets de los 3301 analizados. 
+
+A continuación ilustraremos unos gráficos de los resultados: 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/GraficoBarrasNetflix1308.PNG}
+	\caption{Gráfico de barras de Netflix1308}
+	\label{fig:barrasNetflix1308}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/barrasHBO1308.PNG}
+	\caption{Gráfico de barras de HBO1308}
+	\label{fig:barrasHBO1308}
+\end{figure}
+
+Con estos resultados podemos apreciar que la mayoría de los tonos emocionales detectado son Negativos o Positivos, siendo los positivos la mayoría tanto en Netflix como en HBO. 
+
+
+El siguiente análisis fue realizado el 18 de Agosto. desde las 0:20 hasta las 3am. Un total de dos horas y cuarenta minutos. 
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{c c}
+		
+		\includegraphics[scale=.7]{imagenes/HBO1808Mongo.png}
+		&  \includegraphics[scale=.7]{imagenes/Netflix1808Mongo.png} \\ 
+		
+		{BD de HBO1808}
+		
+		&  {BD de Netflix1808} \\ 
+		
+	\end{tabular} 
+	\label{fig:Mongo1808}
+\end{figure}
+
+Netflix no deja lugar a dudas, vuelve a tener 5 veces más tráfico en las redes que su rival HBO. 
+En esta ocasión, HBO ha tenido un 72\% de tweets sin emojis y Netflix se mantiene casi igual que antes con un 62\%. Analizando los resultados uno por uno se observa lo siguiente: 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/porcentajeNetflix1808.PNG}
+	\caption{Porcentaje de Netflix1808}
+	\label{fig:porcentaje-Netflix1808}
+\end{figure}
+
+En Netflix a 2291 tweets, es decir, al 60\% de los analizados, no se le ha detectado tono emocional alguno. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/porcentajeHBO1808.PNG}
+	\caption{Porcentaje de HBO1808}
+	\label{fig:porcentaje-HBO1808}
+\end{figure}
+
+HBO ha tenido 493 tweets sin tono emocional, equivalente aproximadamente al 38\% del total analizado. 
+
+
+Las gráficas obtenidas son las siguientes: 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/barrasNetflix1808.PNG}
+	\caption{Gráfico de barras de Netflix1808}
+	\label{fig:barrasNetflix1808}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/barrasHBO1808.PNG}
+	\caption{Gráfico de barras de HBO1808}
+	\label{fig:barrasHBO1808}
+\end{figure}
+
+
+Aquí se observa la misma tendencia anterior, la inmensa mayoría de la polaridad emocional es para expresar un tono positivo o negativo, pocos expresan polaridades extremas o neutras. Con la diferencia de que en HBO hay un incremento del porcentaje de opiniones negativas con respecto a Netflix y Netflix porcentualmente recibe cerca del doble de tonos muy positivos. 
+
+
+\subsection{Netflix vs Youtube}
+
+Al haber observado que Netflix poseía una abrumadora superioridad en cuanto a número de usuarios y actividad en las redes que HBO, se optó por hacerla competir con una plataforma mucho más grande, como puede ser YouTube. YouTube es otro formato de plataforma de Streaming Online, pero a diferencia de YouTube y HBO su contenido es gratuito y creado por los propios usuarios, aunque recientemente han sacado YouTube Premium, cuya ventaja era la de quitar los anuncios, han aprovechado para empezar a sacar contenido cinematográfico exclusivo para sus suscriptores, es decir, series y películas producidas por la compañía de Google, como llevan muchos años haciendo Netflix y HBO. 
+
+Se les analizó el 21 de Agosto, de las 16h hasta las 17:30h. Una hora y media de escucha.
+
+
+ 
+ \begin{figure}[H]
+ 	\centering
+ 	\begin{tabular}{c c}
+ 		
+ 		\includegraphics[scale=.7]{imagenes/Netflix2108Mongo.png}
+ 		&  \includegraphics[scale=.7]{imagenes/YT2108Mongo.png} \\ 
+ 		
+ 		{BD de Netflix2108}
+ 		
+ 		&  {BD de YouTube2108} \\ 
+ 		
+ 	\end{tabular} 
+ 	\label{fig:Mongo2108}
+ \end{figure}
+
+
+Es apreciable, que siempre hay un pez más grande. YouTube en tan solo hora y media es mencionada el doble de veces que Netflix.  Netflix mantiene su línea de contenido sin emojis, un 65,8\% de todos los tweets son analizables, mientras que YouTube se mantiene superior, con un 70\% de éxito en los tweets que se analizan correctamente. 
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/porcentajeNetflix2108.PNG}
+	\caption{Porcentaje de Netflix2108}
+	\label{fig:porcentaje-Netflix2108}
+\end{figure}
+
+En Netflix ha habido 942 tweets sin tono emocional, lo que equivale al 39,69\% de los analizados. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/porcentajeYT2108.PNG}
+	\caption{Porcentaje de YouTube2108}
+	\label{fig:porcentaje-YT2108}
+\end{figure}
+
+En YouTube hubo 2073 tweets carentes de tono emocional, 42,12\% del total. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/barrasNetflix2108.PNG}
+	\caption{Gráfico de barras de Netflix2108}
+	\label{fig:barrasNetflix2108}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/barrasYT2108.PNG}
+	\caption{Gráfico de barras de YouTube2108}
+	\label{fig:barrasYT2108}
+\end{figure}
+
+
+En cuanto a las gráficas se refieren, no hay diferencias notables entre las dos plataformas. Se mantiene el tono positivo a la cabeza con el negativo detrás. Aunque levemente, en YouTube hay un mayor porcentaje de tonos extremos, es decir, hay más tonos muy positivos y tonos muy negativos que en Netflix. 
+
+
+
+\subsection{Análisis del total analizado}
+Juntando todos los tweets analizados en ficheros únicos gracias al script \textit{unificador-csv} para poder analizar los resultados completos.
+
+
+\textbf{Netflix: }
+
+ \begin{figure}[H]
+	\centering
+	\begin{tabular}{c c}
+		
+		\includegraphics[scale=.7]{imagenes/porcentajeNetflixAll-NONE.png}
+		&  \includegraphics[scale=.7]{imagenes/barrasNetflixAll.png} \\ 
+		
+		{Porcentajes de Netflix total}
+		
+		&  {Gráfico de barras de Netflix total} \\ 
+		
+	\end{tabular} 
+	\label{fig:NetflixAll}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/piechartNetflixAll.PNG}
+	\caption{Piechart de los resultados de Netflix}
+	\label{fig:piechartNetflixAll}
+\end{figure}
+
+
+Es claramente apreciable que la gran mayoría de los comentarios de Netflix son positivos y muy positivos. Hay más comentario negativos que muy positivos,  pero la diferencia es mínima y siendo solo el 39\% del total positivo es superior al 19\% que suman los tweets negativos y muy negativos. 
+
+
+
+
+\textbf{HBO: }
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{c c}
+		
+		\includegraphics[scale=.7]{imagenes/porcentajeHBOAll-NONE.png}
+		&  \includegraphics[scale=.6]{imagenes/barrasHBOAll.png} \\ 
+		
+		{Porcentajes de HBO total}
+		
+		&  {Gráfico de barras de HBO total} \\ 
+		
+	\end{tabular} 
+	\label{fig:HBOAll}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/piechartHBOAll.PNG}
+	\caption{Piechart de los resultados de HBO}
+	\label{fig:piechartHBOAll}
+\end{figure}
+
+La tendencia es similar a la de Netflix, puesto que la mayoría de comentarios son positivos y se tienden a evitar los extremos y los neutros. Pero en HBO la diferencia entre positivos y negativos es menor, es decir, hay una mayor porcentaje de usuarios que escriben comentarios negativos al hablar de HBO. 
+
+
+
+\subsection{Disney+ y AmazonVideos}
+
+También, como dato anecdótico, se intentó hacer competir la repercusión en redes de la plataforma que va a sacar Disney al mercado, Disney+, y la plataforma de Amazon, AmazonVideos. Pero los resultados fueron poco alentadores, con apenas 150 tweets de Disney+ publicados durante la captación y tan solo 3 tweets de AmazonVideos en el mismo espacio, cabe notar que los tweets de Amazon fueron todos publicados por un mismo usuario repitiendo un mismo mensaje. 
+
+
+
+\subsection{WordClouds}
+
+Finalizada esta etapa de análisis de resultados, pasamos a los resultados del siguiente script relevante del proyecto. Durante esta fase se han ido haciendo diferentes pruebas con diferentes bases de datos y comprobaciones de como hacer los wordclouds mejor. 
+
+Inicialmente los Wordclouds se veían así: 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.5]{imagenes/WordCloudNetflix1.png}
+	\caption{Primer WordCloud de Netflix}
+	\label{fig:wordcloudNetflix1}
+\end{figure} 
+
+El primer fallo notable era que la palabra Netflix aparecía muy repetida, lo cual es obvio, pues Netflix era la palabra clave utilizada para descargar los tweets, es decir, todos los tweets tenían la palabra Netflix presente. Además, un gran numero de ellos incluye enlaces, al empezar todos los enlaces por https el algoritmo detectó esta palabra y sale repetidas veces. Además aparecen \"amp\", utilizado por caracteres especiales y \"co\" que aparece en los enlaces. Implementando el uso de stopwords y cambiando el fondo a blanco por limpieza visual el resultado fue el siguiente: 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.3]{imagenes/NetflixAll.png}
+	\caption{Segundo WordCloud de Netflix}
+	\label{fig:wordcloudNetflix2}
+\end{figure} 
+ 
+En esta segunda versión, se aumenta el número de palabras representadas y el uso de StopWords para limpiar los resultados. Los resultados obtenidos son los que nos podíamos esperar del análisis de un wordcloud de Netflix, palabras como watch, movie, season entre otras están presentes. Es notable como leyendo los resultados se puede extrapolar como la mayoría de usuarios lo utiliza para hablar de series y programas que le gustan: love, good, watch, now. Y como también hay otros usuarios que comentan para recibir recomendaciones: something watch ,  please, Looking. 
+
+
+Pero este formato no llegaba del todo a cumplir unas expectativas de estética visual. Por lo que se siguió mejorando el script. El objetivo era utilizar imágenes como plantilla a la hora de dibujar los wordclouds. Para los primeros intentos se utilizó la siguiente imagen: 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.2]{imagenes/netflix.jpg}
+	\caption{Logo de Netflix}
+	\label{fig:logonetflix}
+\end{figure} 
+
+La cual daba como resultado a wordclouds como este: 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.6]{imagenes/netflix_color.png}
+	\caption{Tercer WordCloud de Netflix}
+	\label{fig:wordcloudNetflix3}
+\end{figure} 
+
+Aunque tenían cierta similitud, este no era el resultado deseado. Se podía apreciar la diferencia entre los colores, el centro rojo y los bordes negros, pero no la silueta real del logo. 
+
+La solución se puedo encontrar prácticamente sola al replicar esta misma técnica con los datos de HBO, al utilizar el siguiente logotipo: 
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.35]{imagenes/logohbo.jpg}
+	\caption{Logo de HBO}
+	\label{fig:logohbo}
+\end{figure} 
+
+El cual daba como resultado el siguiente WordCloud: 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.75]{imagenes/hbo_color2.png}
+	\caption{WordCloud de HBO}
+	\label{fig:wordcloudHBO}
+\end{figure} 
+
+La diferencia principal era que este logo tenía unos bordes blancos mejor delimitados, los cuales el algoritmo podía detectar y así darle la forma deseada al dibujo para que quede mejor. Las palabras en sí no se aprecia gran diferencia de las de Netflix, al ser un servicio parecido las palabras para hablar del mismo, inevitablemente son también parecidos. Con el detalle de que aparece mencionada la plataforma Hulu, la cual tras una breve búsqueda en Google podemos averiguar que en Estados Unidos esta plataforma ofrece los servicios de HBO de la misma forma que Movistar ofrece Netflix en España. 
+
+Para aplicar esta solución a Netflix, se buscó otro logo que tuviese unas delimitaciones blancas que pudiese utilizar el algoritmo. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.35]{imagenes/netf.jpeg}
+	\caption{Segundo logo de Netflix}
+	\label{fig:logonetflix2}
+\end{figure} 
+
+Desde el cual se dibujaba el siguiente WordCloud: 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1.2]{imagenes/NetflixAll2.png}
+	\caption{Wordcloud final de Netflix}
+	\label{fig:wordcloudNetflix}
+\end{figure} 
+
+
+
+
+\subsection{Juego de Tronos}
+
+Como añadido, durante la semana del final del último capítulo de la serie Juego de Tronos hubo una versión previa del \textit{ladrón de tweets}, capturó más de 100mil tweets solo en dos días, el problema es que no tenía un filtro para evitar los Retweets, por lo que la inmensa mayoría de la información es el mismo tweet repetido una y otra vez. Además no estaba gestionado el modo extendido para capturar tweets de más de 140 caracteres. Por lo que su utilidad real para análisis de sentimientos es escasa, pero aún así se le ha hecho un análisis de sentimientos parcial, pues el número de tweets era abrumador y un wordcloud. 
+
+
+
+El total de palabras analizadas es de 19.809.698, las cuales generan el siguiente wordcloud:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{imagenes/JdTLogo.png}
+	\caption{Wordcloud de Juego de Tronos}
+	\label{fig:wordcloudJdT}
+\end{figure} 
+
+Una de las cosas que más llama la atención de este wordcloud fue la gran presencia de \"Avatar the Last Airbender\" y de \"Snoop Dogg\". Esto se debe a dos tweets diferentes publicados mientras se realizaba la captura de tweets, los cuales obtuvieron una enorme cantidad de Retweets y se almacenaron en la base de datos MongoDB miles de veces. 
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{c c}
+		
+		\includegraphics[scale=.3]{imagenes/airbender.png}
+		&  \includegraphics[scale=.3]{imagenes/snoop.png} \\ 
+		
+		{Tweet de Avatar Last Airbender}
+		
+		&  {Tweet sobre la reacción de Snoop Dogg} \\ 
+		
+	\end{tabular} 
+	\caption{Tweets que tuvieron una alta tasa de Retweets y ensuciaron la base de datos}
+	\label{fig:retweets}
+\end{figure}
+
+
+Y la forma que toman los 3500 tweets llevados a analizar a MeaningCloud es la siguiente:
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{c c}
+		
+		\includegraphics[scale=.6]{imagenes/porcentajeJdT.png}
+		&  \includegraphics[scale=.4]{imagenes/barraJdt.png} \\ 
+		
+		{Porcentajes de Juego de Tronos}
+		
+		&  {Gráfico de barras de Juego de Tronos} \\ 
+		
+	\end{tabular} 
+	\caption{Análisis de sentimientos de Juego de Tronos}
+	\label{fig:HBOAll}
+\end{figure}
+
+Lo más destacable es que los tweets muy negativos son muy altos, y la suma de ambos negativos superan con creces a la suma de las polaridades positivas, dejando clara que la tendencia en las redes es bastante negativa al respecto de Juego de Tronos. Lo cual se hizo patente fuera del proyecto, pues hubo un enorme descontento en las bases de los fans al respecto del final de la serie. Otro dato relevante es que los tweets sin tono emocional son muchos, esto se debe principalmente a que muchos de los tweets analizados estaban incompletos debido al modo de tweet extended. 

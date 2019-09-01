@@ -1,0 +1,47 @@
+\babel@toc {spanish}{}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama de Gantt}}{11}{figure.3.1}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Librerías de ladrón de tweets}}{15}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Inicialización de base de datos MongoDB}}{15}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Declaración de variables de acceso, búsqueda e idioma}}{16}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Inicio de sesión en la API de Twitter}}{16}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Función de captura y almacenamiento de tweets}}{17}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Librerías utilizadas y declaración de la BD y creación de la nueva colección concepts}}{18}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Declaración de variables necesarias para la API de MeaningCloud}}{18}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Bucle para recorrer la BD de Mongo y analizarla}}{20}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Librerías utilizadas en el script de WordCloud}}{21}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Lectura de la imagen de plantilla y unificación de todos los tweets en una única variable}}{22}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Adición de Stopwords al WordCloud}}{22}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Generación de la imagen del WordCloud}}{23}{figure.5.12}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Diferentes BD generadas en MongoDB}}{26}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Porcentaje de HBO1308}}{27}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Porcentaje de Netflix1308}}{27}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Gráfico de barras de Netflix1308}}{28}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Gráfico de barras de HBO1308}}{28}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Porcentaje de Netflix1808}}{29}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Porcentaje de HBO1808}}{29}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Gráfico de barras de Netflix1808}}{30}{figure.6.8}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Gráfico de barras de HBO1808}}{30}{figure.6.9}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Porcentaje de Netflix2108}}{31}{figure.6.10}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Porcentaje de YouTube2108}}{32}{figure.6.11}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Gráfico de barras de Netflix2108}}{32}{figure.6.12}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Gráfico de barras de YouTube2108}}{33}{figure.6.13}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Piechart de los resultados de Netflix}}{34}{figure.6.14}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Piechart de los resultados de HBO}}{35}{figure.6.15}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Primer WordCloud de Netflix}}{36}{figure.6.16}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Segundo WordCloud de Netflix}}{37}{figure.6.17}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Logo de Netflix}}{38}{figure.6.18}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Tercer WordCloud de Netflix}}{38}{figure.6.19}
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Logo de HBO}}{39}{figure.6.20}
+\contentsline {figure}{\numberline {6.21}{\ignorespaces WordCloud de HBO}}{39}{figure.6.21}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Segundo logo de Netflix}}{40}{figure.6.22}
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Wordcloud final de Netflix}}{40}{figure.6.23}
+\contentsline {figure}{\numberline {6.24}{\ignorespaces Wordcloud de Juego de Tronos}}{41}{figure.6.24}
+\contentsline {figure}{\numberline {6.25}{\ignorespaces Tweets que tuvieron una alta tasa de Retweets y ensuciaron la base de datos}}{42}{figure.6.25}
+\contentsline {figure}{\numberline {6.26}{\ignorespaces Análisis de sentimientos de Juego de Tronos}}{42}{figure.6.26}
+\addvspace {10pt}

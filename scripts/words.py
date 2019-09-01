@@ -45,7 +45,7 @@ text = " ".join(text for text in df.Text)
 
 print("Hay {} palabras en la combinacion de todos los tweets.".format(len(text)))
 
-netflix_mask = np.array(Image.open("img/logohbo.jpg"))
+netflix_mask = np.array(Image.open("img/gotlogo.jpg"))
 
 
 #netflix_mask= convert_image("logo.png")
@@ -61,8 +61,8 @@ stopwords.update(["Sa4K2Wca8B", "RT", "DNCNwIZDRZ", "12sSdRD08Oo" "amp", "co", "
 
 # Generate a word cloud image
 #wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
-wordcloud = WordCloud(background_color="white", max_words=10000, mask=netflix_mask,
-                        stopwords=stopwords, contour_width=3, contour_color='black')
+wordcloud = WordCloud(background_color="white", max_words=1000000, mask=netflix_mask,
+                        stopwords=stopwords, contour_width=2, contour_color='black')
 
 wordcloud.generate(text)
 
@@ -73,5 +73,5 @@ plt.figure(figsize=[7,7])
 plt.imshow(wordcloud.recolor(color_func=image_colors), interpolation='bilinear')
 
 plt.axis("off")
-plt.savefig("img/JdTStark.png", format="png")
+plt.savefig("img/JdTLogo.png", format="png")
 plt.show()
