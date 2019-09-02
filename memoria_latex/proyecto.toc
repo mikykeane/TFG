@@ -1,6 +1,6 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{Índice general}{\es@scroman {i}}{section*.5}
-\contentsline {chapter}{Índice de figuras}{\es@scroman {i}}{section*.6}
+\contentsline {chapter}{Índice de figuras}{\es@scroman {ii}}{section*.6}
 \contentsline {chapter}{\chapternumberline {1}Introducción}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivación}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Definición del problema}{2}{section.1.2}
@@ -10,7 +10,7 @@
 \contentsline {subsection}{Twitter}{3}{section*.9}
 \contentsline {chapter}{\chapternumberline {2}Estado del Arte }{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Análisis de Sentimientos}{5}{section.2.1}
-\contentsline {subsection}{BrandWatch}{6}{section*.10}
+\contentsline {subsection}{BrandWatch}{5}{section*.10}
 \contentsline {subsection}{MeaningCloud}{6}{section*.11}
 \contentsline {section}{\numberline {2.2}Extraccion de datos de Twitter}{6}{section.2.2}
 \contentsline {subsection}{SocialStreams}{6}{section*.12}
@@ -18,7 +18,7 @@
 \contentsline {subsection}{Tweepy}{7}{section*.14}
 \contentsline {section}{\numberline {2.3}Almacenamiento de datos}{7}{section.2.3}
 \contentsline {subsection}{SQL}{7}{section*.15}
-\contentsline {subsection}{MongoDB}{8}{section*.16}
+\contentsline {subsection}{MongoDB}{7}{section*.16}
 \contentsline {chapter}{\chapternumberline {3}Análisis y Planificación}{9}{chapter.3}
 \contentsline {subsection}{Preparación}{9}{section*.17}
 \contentsline {subsection}{Desarrollo}{9}{section*.18}
@@ -27,13 +27,14 @@
 \contentsline {chapter}{\chapternumberline {4}Diseño}{13}{chapter.4}
 \contentsline {chapter}{\chapternumberline {5}Implementación}{15}{chapter.5}
 \contentsline {subsection}{Ladrón de Tweets}{15}{section*.21}
-\contentsline {subsection}{Análisis Sentimientos}{17}{section*.22}
+\contentsline {subsection}{Análisis de Sentimientos}{17}{section*.22}
 \contentsline {subsection}{WordCloud}{20}{section*.23}
 \contentsline {chapter}{\chapternumberline {6}Resultados}{25}{chapter.6}
 \contentsline {section}{\numberline {6.1}Análisis de Netflix y HBO}{26}{section.6.1}
 \contentsline {subsection}{Netflix vs Youtube}{31}{section*.24}
-\contentsline {subsection}{Análisis del total analizado}{33}{section*.25}
+\contentsline {subsection}{Estudio del total analizado}{33}{section*.25}
 \contentsline {subsection}{Disney+ y AmazonVideos}{35}{section*.26}
 \contentsline {subsection}{WordClouds}{35}{section*.27}
 \contentsline {subsection}{Juego de Tronos}{40}{section*.28}
 \contentsline {chapter}{\chapternumberline {7}Conclusiones}{45}{chapter.7}
+\contentsline {chapter}{Bibliografía}{45}{chapter.7}

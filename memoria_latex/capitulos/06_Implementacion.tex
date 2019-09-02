@@ -32,7 +32,7 @@ Lo siguiente que hacemos es crear y conectarnos a la base de datos MongoDB, en l
 \end{figure}
 
 
-Posteriormente es necesario declarar las variables que usaremos al usar la API de Twitter. El idioma que buscará, las claves de acceso y las palabras claves que deseamos descargar. 
+Posteriormente es necesario declarar las variables que emplearemos al usar la API de Twitter. El seleccionado, las claves de acceso y las palabras claves que deseamos descargar. 
 
 \begin{figure}[h]
 	\centering
@@ -42,7 +42,7 @@ Posteriormente es necesario declarar las variables que usaremos al usar la API d
 \end{figure}
 
 
-Llegado este punto, deberemos hacer la conexión con la API de Twitter mediante las funcionalidades de Tweepy, usando las variables previamente declaradas. Con la función Stream, lo que hacemos es ponerlo en modo escucha, es decir, accederemos a los tweets que sean escritos en el tiempo de ejecución serán los que descarguemos. Debemos incluir el modo \textit{$tweet\_mode$=extended} el cual es necesario porque sino se usa solo se descargarán los primeros 140 caracteres del tweet, añadiendo información incompleta y por lo tanto desechable en la base de datos. 
+Llegado este punto, deberemos hacer la conexión con la API de Twitter mediante las funcionalidades de Tweepy, usando las variables previamente declaradas. Con la función Stream, lo que hacemos es ponerlo en modo escucha, es decir, accederemos a los tweets que sean escritos en el tiempo de ejecución y estos serán los que descarguemos. Debemos incluir el modo \textit{$tweet\_mode$=extended} el cual es necesario porque en caso contrario solo se descargarán los primeros 140 caracteres del tweet, añadiendo información incompleta y por lo tanto desechable en la base de datos. 
 
 \begin{figure}[h]
 	\centering
@@ -52,7 +52,7 @@ Llegado este punto, deberemos hacer la conexión con la API de Twitter mediante 
 \end{figure}
 
 
-En la función \textit{StdOutListener()} tendremos la parte clave del script, en donde extraeremos la información del tweet y la almacenaremos en MongoDB. Al principio del código evitaremos descargar los Retweets, ya que por experiencia, estos Retweets lo que hacen es ensuciar la base de datos, puesto que si una persona con gran influencia en redes publica un tweet que es compartido por mucha gente, no aporta nueva información sino que almacena cientos o miles de veces la misma información, invalidando en parte los resultados de su posterior análisis. 
+En la función \textit{StdOutListener()} tendremos la parte clave del script, en donde extraeremos la información del tweet y la almacenaremos en MongoDB. Al principio del código evitaremos descargar los Retweets, ya que por experiencia, estos ensucian la base de datos, Esto se debe a que los retweets suponen una repetición, no aportando nueva información, invalidando en parte los resultados de su posterior análisis. 
 
  
  \begin{figure}[H]
@@ -77,10 +77,10 @@ En la función \textit{StdOutListener()} tendremos la parte clave del script, en
 
 
 
-\subsection{Análisis Sentimientos}
+\subsection{Análisis de Sentimientos}
 
 
-Una vez existe una base de datos MongoDB hay que enviarla a analizar a MeaningCloud haciendo uso de su API. Luego de analizarla, obtendremos una información que será almacenada por partida doble, para facilitar la reutilización de la misma. Crearemos una colección diferente dentro de la base de datos MongoDB ya existente, a la que denominaremos \textit{concepts} y a la par se creará un archivo CSV en el cual almacenaremos toda la información para facilitar su posterior análisis. 
+Una vez existe una base de datos MongoDB hay que enviarla a analizar a MeaningCloud haciendo uso de su API. Tras su análisis, obtendremos una información que será almacenada por partida doble, para facilitar la reutilización de la misma. Crearemos una colección diferente dentro de la base de datos MongoDB ya existente, a la que denominaremos \textit{concepts} y a la par se creará un archivo CSV en el cual almacenaremos toda la información para facilitar su posterior análisis. 
 
 \begin{figure}[H]
 	\centering
@@ -118,13 +118,13 @@ El código recorrerá toda la colección \textit{tweets} de la base de datos Mon
 		\item NONE: Ninguno, no se le ha detectado ningún tono emocional al texto.
 	\end{itemize}
 	\item \textbf{Agreement:} Si hay más de un sentimiento detectado en el texto, si estos sentimientos tienen el mismo tono emocional o no. 
-	\item \textbf{Subjectivity:} Subjetividad. Como su nombre indica, indica si el texto era objetivo o subjetivo.
-	\item \textbf{Irony:} Indica si el texto era irónico o no. Por experiencia al usarlo esta variable será ignorada puesto que tras comprobarlo su tasa de acierto es muy baja o nula. 
-	\item \textbf{Sentimented\_Entity\_List:} Lista de entidades en el texto de las cuales tienen una polaridad, es decir, generan un tono emocional en el autor. Nombres de compañías de servicio, ciudades, países, nombres de usuario. Reconoce un gran rango de entidades. 
+	\item \textbf{Subjectivity:} Subjetividad. Indica si el texto es objetivo o subjetivo.
+	\item \textbf{Irony:} Indica si el texto es irónico o no. La experiencia en este proyecto ha aconsejado ignorar esta variable por resultar su tasa de acierto muy baja o nula. 
+	\item \textbf{Sentimented\_Entity\_List:} Lista de entidades en el texto que tienen una polaridad, es decir, generan un tono emocional en el autor. Nombres de compañías de servicio, ciudades, países, nombres de usuario. Reconoce un gran rango de entidades. 
 	\item \textbf{Sentimented\_Concept\_List:} Lista de conceptos en el texto los cuales tienen polaridad concreta. 
 \end{itemize}
 
-Finalmente, tras su análisis. Si la confianza en el análisis está en un rando aceptable, almacenamos los datos en un fichero CSV y en la nueva colección \textit{concepts} que hemos creado dentro de la misma base de datos. Es importante notar que este análisis no admite la introducción de emojis, por lo que los tweets que contengan emojis serán devueltos con un mensaje de Error, el cual no interrumpirá el análisis y simplemente seguirá analizando el resto de la base de datos. 
+Finalmente, tras su análisis. Si la confianza en el mismo está en un rango aceptable, almacenamos los datos en un fichero CSV y en la nueva colección \textit{concepts} que hemos creado dentro de la misma base de datos. Es importante resaltar que este análisis no admite la introducción de emojis, por lo que los tweets que contengan emojis serán devueltos con un mensaje de Error, el cual no interrumpirá el proceso y simplemente seguirá analizando el resto de la base de datos. 
 
 
 \begin{figure}[H]
@@ -159,9 +159,9 @@ Se ha diseñado un script, que recorrerá todas las palabras de todos los tweets
 \end{figure}
 
 
-El código extrairá la información del fichero CSV deseado con la función \textit{read\_csv()} de la librería Pandas. Como información añadida mostrará por pantalla cuantos tweets hay de cada polaridad, desde muy positivo a muy negativo, también hará un recuento de las palabras que haya en el total de todos los tweets juntos. Los cuales se juntarán todos en una sola variable denominada text gracias a un bucle y la facilidad de manipulación de datos que ofrece Pandas.
+El código extraerá la información del fichero CSV deseado con la función \textit{read\_csv()} de la librería Pandas. Como información añadida mostrará por pantalla cuantos tweets hay de cada polaridad, desde muy positivo a muy negativo, también hará un recuento de las palabras que haya en la totalidad de los tweets. Los cuales se unificarán todos en una sola variable denominada text gracias a un bucle y a la facilidad de manipulación de datos que ofrece Pandas.
  
- Finalmente para este fragmento, se le introduce una imagen previamente seleccionada, la cual hará de plantilla para la posterior generación del WordCloud, es decir, en vez de usar la forma en la que aparece por defecto, usará la forma y colores de la imagen que se le introduzca. Esta imagen deberá estar en formato RPG pues gracias a Numpy se generará una máscara con la imagen transformada en un array de datos. La función array de Numpy transforma la imagen en un vector de datos comprendidos en un rango de 0-255 que contendrán la información de la imagen en un formato que el algoritmo pueda procesar.
+ Finalmente para este fragmento, se le introduce una imagen previamente seleccionada, la cual hará de plantilla para la posterior generación del WordCloud, es decir, en vez de usar la forma en la que aparece por defecto, empleará la forma y colores de dicha imagen. La imagen deberá estar en formato RPG, pues gracias a Numpy se generará una máscara con ella transformada en un array de datos. La función array de Numpy convierte la imagen en un vector de datos comprendidos en un rango de 0-255 que contendrán la información de la misma en un formato que el algoritmo pueda procesar.
 
 \begin{figure}[H]
 	\centering
@@ -181,7 +181,7 @@ Una opción para la creación del WordCloud es la asignación de Stopwords, los 
 \end{figure}
 
 
-Ahora queda la generación del WordCloud en sí. Llamando a la función \textit{WordCloud()} en la que introducimos los parámetros deseados, entre los que destacan el número máximo de palabras que generaremos, la máscara que indicará la forma que debe tomar el wordcloud en sí, los stopwords que se han añadido con prioridad, el grosor de los bordes, de tenerlos, de la plantilla y el color de dichos bordes. Con la función \textit{ImageColorGenerator()} a la cual se le añade como parámetro la máscara generada con NumPy, indicará qué colores darle a las palabras al pintar la figura. Para finalizar, con las funcionalidades de Matplotlib se pintará la imagen, habiendo que indicarle el tamaño de la figura resultante y pasarle la variable de wordcloud que contiene las palabras y por parámetro el color que deseamos que tengan dichas palabras para respetar el formato original. Guarda la figura con el nombre y formato deseado y la muestra por pantalla. 
+Por último, es preciso la generación del WordCloud en sí. Llamando a la función \textit{WordCloud()} en la que introducimos los parámetros deseados, entre los que destacan el número máximo de palabras que generaremos, la máscara que indicará la forma que debe tomar el wordcloud, los stopwords que se han añadido con prioridad, el grosor de los bordes (de tenerlos) de la plantilla y el color de dichos bordes. Con la función \textit{ImageColorGenerator()} a la cual se le añade como parámetro la máscara generada con NumPy, indicará qué colores tomarán las palabras al pintar la figura. Para finalizar, con las funcionalidades de Matplotlib se pintará la imagen, habiendo de indicarle el tamaño de la figura resultante y pasarle la variable de wordcloud que contiene las palabras y por parámetro el color que deseamos que tengan dichas palabras para respetar el formato original. Finalmente, guarda la figura con el nombre y formato deseado y la muestra por pantalla. 
 
 \begin{figure}[H]
 	\centering
