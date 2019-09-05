@@ -1,40 +1,47 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{Índice general}{\es@scroman {i}}{section*.5}
 \contentsline {chapter}{Índice de figuras}{\es@scroman {ii}}{section*.6}
+\contentsline {chapter}{Índice de cuadros}{\es@scroman {iii}}{section*.7}
 \contentsline {chapter}{\chapternumberline {1}Introducción}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivación}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Definición del problema}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Redes Sociales}{2}{section.1.3}
-\contentsline {subsection}{Instagram}{2}{section*.7}
 \contentsline {subsection}{Facebook}{2}{section*.8}
-\contentsline {subsection}{Twitter}{3}{section*.9}
+\contentsline {subsection}{Twitter}{2}{section*.9}
+\contentsline {subsection}{Instagram}{3}{section*.10}
 \contentsline {chapter}{\chapternumberline {2}Estado del Arte }{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Análisis de Sentimientos}{5}{section.2.1}
-\contentsline {subsection}{BrandWatch}{5}{section*.10}
-\contentsline {subsection}{MeaningCloud}{6}{section*.11}
-\contentsline {section}{\numberline {2.2}Extraccion de datos de Twitter}{6}{section.2.2}
-\contentsline {subsection}{SocialStreams}{6}{section*.12}
-\contentsline {subsection}{Python Twitter Tools}{7}{section*.13}
-\contentsline {subsection}{Tweepy}{7}{section*.14}
-\contentsline {section}{\numberline {2.3}Almacenamiento de datos}{7}{section.2.3}
-\contentsline {subsection}{SQL}{7}{section*.15}
-\contentsline {subsection}{MongoDB}{7}{section*.16}
-\contentsline {chapter}{\chapternumberline {3}Análisis y Planificación}{9}{chapter.3}
-\contentsline {subsection}{Preparación}{9}{section*.17}
-\contentsline {subsection}{Desarrollo}{9}{section*.18}
-\contentsline {subsection}{Obtención de información}{10}{section*.19}
-\contentsline {subsection}{Análisis de resultados}{10}{section*.20}
-\contentsline {chapter}{\chapternumberline {4}Diseño}{13}{chapter.4}
-\contentsline {chapter}{\chapternumberline {5}Implementación}{15}{chapter.5}
-\contentsline {subsection}{Ladrón de Tweets}{15}{section*.21}
-\contentsline {subsection}{Análisis de Sentimientos}{17}{section*.22}
-\contentsline {subsection}{WordCloud}{20}{section*.23}
-\contentsline {chapter}{\chapternumberline {6}Resultados}{25}{chapter.6}
-\contentsline {section}{\numberline {6.1}Análisis de Netflix y HBO}{26}{section.6.1}
-\contentsline {subsection}{Netflix vs Youtube}{31}{section*.24}
-\contentsline {subsection}{Estudio del total analizado}{33}{section*.25}
-\contentsline {subsection}{Disney+ y AmazonVideos}{35}{section*.26}
-\contentsline {subsection}{WordClouds}{35}{section*.27}
-\contentsline {subsection}{Juego de Tronos}{40}{section*.28}
-\contentsline {chapter}{\chapternumberline {7}Conclusiones}{45}{chapter.7}
-\contentsline {chapter}{Bibliografía}{45}{chapter.7}
+\contentsline {subsection}{Brandwatch\cite {Brandwatch}}{5}{section*.11}
+\contentsline {subsection}{Google Cloud Natural Language\cite {GoogleCloudNaturalLanguage}}{6}{section*.12}
+\contentsline {subsection}{MeaningCloud\cite {MeaningCloud}}{6}{section*.13}
+\contentsline {section}{\numberline {2.2}Extracción de datos de Twitter}{7}{section.2.2}
+\contentsline {subsection}{SocialStreams\cite {SocialStreams}}{7}{section*.14}
+\contentsline {subsection}{Python Twitter Tools\cite {PythonTwitter}}{7}{section*.15}
+\contentsline {subsection}{Tweepy\cite {Tweepy}}{7}{section*.16}
+\contentsline {section}{\numberline {2.3}Almacenamiento de datos}{8}{section.2.3}
+\contentsline {subsection}{SQL}{8}{section*.17}
+\contentsline {subsection}{MongoDB\cite {MongoDB}}{8}{section*.18}
+\contentsline {chapter}{\chapternumberline {3}Objetivos}{9}{chapter.3}
+\contentsline {chapter}{\chapternumberline {4}Metodología}{11}{chapter.4}
+\contentsline {subsection}{Preparación}{11}{section*.19}
+\contentsline {subsection}{Desarrollo}{12}{section*.20}
+\contentsline {subsection}{Obtención de información}{12}{section*.21}
+\contentsline {subsection}{Análisis de resultados}{12}{section*.22}
+\contentsline {chapter}{\chapternumberline {5}Presupuesto}{15}{chapter.5}
+\contentsline {chapter}{\chapternumberline {6}Diseño}{17}{chapter.6}
+\contentsline {subsection}{Requerimientos Funcionales}{17}{section*.23}
+\contentsline {subsection}{Requerimientos No Funcionales}{18}{section*.24}
+\contentsline {subsection}{Casos de Uso}{19}{section*.25}
+\contentsline {chapter}{\chapternumberline {7}Implementación}{21}{chapter.7}
+\contentsline {subsection}{Ladrón de Tweets}{21}{section*.26}
+\contentsline {subsection}{Análisis de Sentimientos}{22}{section*.27}
+\contentsline {subsection}{Nubes de palabras y representaciones gráficas}{24}{section*.28}
+\contentsline {chapter}{\chapternumberline {8}Resultados}{27}{chapter.8}
+\contentsline {section}{\numberline {8.1}Análisis de Netflix y HBO}{28}{section.8.1}
+\contentsline {subsection}{Netflix vs Youtube}{33}{section*.29}
+\contentsline {subsection}{Estudio del total analizado}{35}{section*.30}
+\contentsline {subsection}{Disney+ y AmazonVideos}{37}{section*.31}
+\contentsline {subsection}{WordClouds}{37}{section*.32}
+\contentsline {subsection}{Juego de Tronos}{41}{section*.33}
+\contentsline {chapter}{\chapternumberline {9}Conclusiones}{45}{chapter.9}
+\contentsline {chapter}{Bibliografía}{47}{chapter*.34}

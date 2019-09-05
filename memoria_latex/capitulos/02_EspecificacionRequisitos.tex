@@ -7,37 +7,47 @@
 
 \chapter{Estado del Arte }
 
-El estado del arte se refiere al estado actual de una tecnología concreta. Siendo este el punto de partida sobre el cual cimentar el proyecto, tomar conocimiento de los trabajos realizados y así evitar reiterar estudios ya ejecutados, siendo un pilar necesario para el avance.
+ Siendo este el punto de partida sobre el cual cimentar el proyecto, tomar conocimiento de los trabajos realizados y así evitar reiterar estudios ya ejecutados, siendo un pilar necesario para el avance.
 
 Esta investigación aborda trabajos previos realizados, concernientes al análisis de sentimientos, al tratamiento de la Big Data y a la obtención de información en redes sociales. Existiendo mucho recorrido en todos estos ámbitos. 
 
 \section{Análisis de Sentimientos}
 
-Se refiere al procesamiento por parte de una máquina que sea capaz de, sin intervención humana, indicar el tono emocional que desea expresar el autor del mensaje, teniendo en cuenta diversos factores y posibles significados implícitos. Esta técnica, aún esta en fase de desarrollo, y hay mucho que recorrer para que el análisis sea verdaderamente fiable, pues aunque intenta contemplar dobles sentidos e ironía, los resultados no son todavía aceptables en muchas ocasiones. Pero el avance es inexorable y nuevas técnicas aparecen constantemente, siendo desarrolladas sobre todo en el sector privado. Es sabido que la administración Obama utilizó estos análisis para hacer sondeos sobre la opinión pública a fin de afinar mejor los mensajes de campaña y poder llegar al mayor público posible. Desde entonces es lógico asumir que toda gran corporación empresarial o política hace usos de los análisis de sentimientos para obtener información práctica de la Big Data que tenemos en la red. Con un búsqueda en Google podemos encontrar varias empresas dedicadas a este análisis, las cuales están orientadas, en su mayoría, a grandes empresas.  
+Se refiere al procesamiento por parte de una máquina que sea capaz de, sin intervención humana, indicar la polaridad que desea expresar el autor del mensaje, teniendo en cuenta diversos factores y posibles significados implícitos. La polaridad se refiere a la positividad o negatividad que transmite el autor. Esta técnica, aún esta en fase de desarrollo, y hay mucho que recorrer para que el análisis sea verdaderamente fiable, pues aunque intenta contemplar dobles sentidos e ironía, los resultados no son todavía aceptables en muchas ocasiones. Pero el avance es inexorable y nuevas técnicas aparecen constantemente, siendo desarrolladas sobre todo en el sector privado. Es sabido que la administración Obama utilizó estos análisis para hacer sondeos sobre la opinión pública a fin de afinar mejor los mensajes de campaña y poder llegar al mayor público posible. Desde entonces es lógico asumir que toda gran corporación empresarial o política hace usos de los análisis de sentimientos para obtener información práctica de la Big Data que tenemos en la red. Con un búsqueda en Google podemos encontrar varias empresas dedicadas a este análisis, las cuales están orientadas, en su mayoría, a grandes empresas.  
 
-\subsection{BrandWatch}
+\subsection{Brandwatch\cite{Brandwatch}}
 Plataforma de escucha e Inteligencia Social, la cual proporciona interesantes herramientas de escucha social, pudiendo hacer subdivisiones por temas dentro de la misma y luego analizar el sentimiento de cada tema por separado. 
 
 Como dato anecdótico en su página web, cuentan la historia de una empresa que publicó un anuncio. Al analizar las respuestas de sus potenciales clientes se dieron cuenta que casi todos los comentarios eran negativos debido a la música repetitiva, gracias a esto, pudieron corregir y publicar de forma inmediata un segundo anuncio donde se rompía el violín que tocaba la música, dándole así la vuelta con humor al problema, obteniéndose incluso mejores resultados de los que se podían esperar con anuncio original. Esto es un buen ejemplo de que analizar las opiniones a tiempo puede resultar extremadamente beneficioso.
 
-\subsection{MeaningCloud}
+\subsection{Google Cloud Natural Language\cite{GoogleCloudNaturalLanguage}}
+
+Google ofrece su propia API desde la cual analizar los textos. Posee un potente motor que permite extraer información sobre personas, lugares y eventos entre otros. Es capaz de hacer un análisis sintáctico de alta calidad, reconocer las entidades presentes en el texto y comprender la opinión general expresada en el mismo. Una API que no tiene ningún desperdicio, la principal razón por la que no fue usada en el proyecto es debido a que solo permitían 5000 análisis gratuitos y exigía introducir una tarjeta de crédito en el proceso de registro. 
+
+\subsection{MeaningCloud\cite{MeaningCloud}}
+
 Esta empresa proporciona un servicio online, el cual es accesible mediante una API. Proporcionan un servicio de análisis de textos variados, no es exclusivo del análisis de sentimientos, pues también proporcionan más servicios. Permite a los usuarios empotrar análisis de textos y procesamientos semánticos en cualquier aplicación o sistema. Tienen un acceso limitado gratuito, el cual es muy interesante y ha sido el seleccionado para el proyecto debido a su facilidad de acceso, donde mediante un programa propio, es posible acceder al servicio gracias a su API, utilizando su información como el programador disponga. Su método de análisis de sentimientos es por polaridad, con datos que varían desde muy positivo, positivo, neutro, negativo y muy negativo. Incluso puede asignar diferentes polaridades a diferentes segmentos del texto. En este proyecto, al estar trabajando con el formato \textit{tweet} solo se tendrá en cuenta la polaridad general, pues al ser textos cortos se ha estimado que los casos donde haya más de un tópico de diferente polaridad serán desestimables. 
 
+Cabe destacar que entre los clientes de esta empresa se encuentran algunos tan prestigiosos como Telefónica y la farmacéutica Pfizer entre otros. 
 
-\section{Extraccion de datos de Twitter}
+
+
+
+
+\section{Extracción de datos de Twitter}
 
 La propia plataforma de Twitter, tiene una API para que cualquier desarrollador pueda acceder a sus datos de forma sencilla desde cualquier programa. El inconveniente es que, en la versión gratuita el servicio es, obviamente, mucho más limitado, pues solo son accesibles los tweets escritos en los últimos 7 días, con un límite de tweets que se pueden descargar cada 15 minutos. Como ventaja esta API, posibilita muchas formas de acceder a la información
 
-\subsection{SocialStreams} 
+\subsection{SocialStreams\cite{SocialStreams}} 
 Esta plataforma proporciona conexiones de punto a punto (end-to-end) para recolectar, pre procesar y enviar la información desde la API de Twitter al destino de tu preferencia. Proporciona un acceso sencillo a la información sin necesidad de desarrollar un programa, seleccionando directamente la plataforma que se desea consultar (Twitter, Reddit, Linkedn, etc.), indicando el formato preferente de salida (Base de datos, CSV, JSON). De esta forma, los datos son accesibles, previa remuneración, sin necesidad de desarrollo software. 
 
-\subsection{Python Twitter Tools}
+\subsection{Python Twitter Tools\cite{PythonTwitter}}
 
-Esta API para Python, disponible en Pypi, el repositorio de software oficial para aplicaciones en lenguaje Python. Proporciona una API minimalista de Twitter, una herramienta de linea de comandos para obtener y enviar tweets y un bot IRC, el cual proporciona funciones automatizadas, pudiendo anunciar por ejemplo, actualizaciones de Twitter en un canal IRC. Esta herramienta, fue valorada para elaborar este tabajo dada la preferencia de trabajar en un entorno Python, pero al ser tan centrada en el formato twitter, no dejaba libertad para el resto del desarrollo software.
+Esta API para Python, disponible en Pypi, el repositorio de software oficial para aplicaciones en lenguaje Python. Proporciona una API minimalista de Twitter, una herramienta de línea de comandos para obtener y enviar tweets y un bot IRC, el cual proporciona funciones automatizadas, pudiendo anunciar por ejemplo, actualizaciones de Twitter en un canal IRC. Esta herramienta, fue valorada para elaborar este tabajo dada la preferencia de trabajar en un entorno Python, pero al ser tan centrada en el formato twitter, no dejaba libertad para el resto del desarrollo software.
 
-\subsection{Tweepy}
+\subsection{Tweepy\cite{Tweepy}}
 
-Tweepy es una librería de Python específicamente diseñada para hacer la conexión con la API de Twitter más sencilla. Proporciona diferentes metodos RESTful (transferencia de estado representacional en castellano), los cuales son los que se usan en la web, permitiendo obtener datos o ejecutar operaciones con dichos datos, en cualquier formato, sin las abstracciones de los protocolos basados en intercambio de mensajes. Por lo que esta librería es ideal para el proyecto, ya que proporciona las herramientas de autentificación, búsqueda y streaming (escucha de tweets en tiempo real)
+Tweepy es una librería de Python específicamente diseñada para hacer la conexión con la API de Twitter más sencilla. Proporciona diferentes metodos RESTful (transferencia de estado representacional en castellano), los cuales son los que se usan en la web, permitiendo obtener datos o ejecutar operaciones con dichos datos, en cualquier formato, sin las abstracciones de los protocolos basados en intercambio de mensajes. Por lo que esta librería es ideal para el proyecto, ya que proporciona las herramientas de autentificación, búsqueda y streaming (escucha de tweets en tiempo real).
 
 \section{Almacenamiento de datos}
 Una vez obtenidos los datos, es necesario almacenarlos de alguna forma. Para ello existe una enorme gama de bases de datos a disposición del desarrollador. 
@@ -46,12 +56,15 @@ Una vez obtenidos los datos, es necesario almacenarlos de alguna forma. Para ell
 
 SQL (lenguaje de consulta estructurada) es un lenguaje de dominio específico utilizado en programación, siendo su principal función la administración y la recuperación de información de bases de datos relacionales. Es actualmente el estándar del ANSI (Instituto Nacional Estadunidense de Estándares) y del ISO (Organización Internacional de Normalización). Pero a pesar de estos estándares, la gran mayoría de códigos SQL no son portables entre diferentes bases de datos sin necesidad de ajustes. 
 
-\subsection{MongoDB}
+\subsection{MongoDB\cite{MongoDB}}
 
-MongoDB es un sistema de base de datos NoSQL orientado a documentos de código abierto. Tiene la ventaja de que en vez guardar los datos en tablas, como hacen las bases de datos relacionales, guarda estructuras de datos BSON, que son similares a JSON, haciendo mucho más sencilla la integración de los datos en la aplicación. Debido a que la información de Twitter está en formato JSON y por la maravillosa portabilidad que tiene con Python, en el proyecto guardaremos los datos que recibamos de Twitter en bases de datos MongoDB, ya que el formato de este es muy adecuado para las necesidades del proyecto. 
+MongoDB es un sistema de base de datos NoSQL de código abierto orientado a documentos. En vez de guardar los datos en tablas, como hacen las bases de datos relacionales, guarda estructuras de datos BSON, que son similares a JSON, haciendo mucho más sencilla la integración de los datos en la aplicación. Debido a que la información de Twitter se descarga en formato JSON y por la maravillosa portabilidad que tiene con Python, en el proyecto guardaremos los datos que recibamos de Twitter en bases de datos MongoDB, ya que el formato de este es muy adecuado para las necesidades del proyecto. 
 
-Una librería muy útil para compatibilizarlo con Python es \textbf{Pymongo} la cual nos permite conectarnos a MongoDB gracias a una serie de funciones que permiten la compatibilidad
+Una librería muy útil para compatibilizarlo con Python es \textbf{Pymongo}\cite{Pymongo} la cual nos permite conectarnos a MongoDB gracias a una serie de funciones que permiten la compatibilidad.
   
+  
+  
+Para la selección de la base de datos seleccionada \textbf{MongoDB} en vez de \textbf{SQL}, aparte de la facilidad de integración en Python y la similitud entre su formato y el de los datos obtenidos, se ha valorado la flexibilidad en cuanto al esquema de la información, por lo que si se desea añadir un campo extra a alguno de los registros no es necesario remodelar toda la tabla. Al no ser una base de datos relacionada no hay combinaciones de registros entre diferentes tablas lo que se traduce en una mejora de rendimiento, ya que las consultas serán más rápidas. Además, a nivel personal, se deseaba reforzar el manejo de MongoDB para afianzar los conocimientos al respecto de la misma y poder utilizar en el futuro este modelo con comodidad.  
 
 
 

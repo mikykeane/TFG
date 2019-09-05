@@ -30,10 +30,10 @@ keywords = ['RTVE' ]
 language = ['es']
 
 # Mis claves personales de twitter. Si no puedo descargar mas tendre que usar otras cuentas para ir descargando en orden
-consumer_key = "QP2e7jAq8uFovjeXcg9flSYKN"
-consumer_secret = "dode0ExemNHGN29gBJYazgad2QlrOllH9AqR1AKAQgvXJ1veTh"
-access_token = "381614868-TLNz2v5Q4zPhLbHQ6meJ3YDWpwXveWzdx40DzVXO"
-access_token_secret = "y4DpePPz2YVXaLtNazPfs5i7UuRb1AYQOfgFGrTobSrGc"
+consumer_key = "TOKEN"
+consumer_secret = "TOKEN"
+access_token = "TOKEN"
+access_token_secret = "YOUR TOKEN"
 # Aqui indicamos que solo decargue los tweets que encajen con mis keywords
 class StdOutListener(StreamListener):
 

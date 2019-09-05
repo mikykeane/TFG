@@ -34,10 +34,10 @@ key= "YOUR_KEY"
 lang="en"
 headers = {'content-type': 'application/x-www-form-urlencoded'}
 
-
+csv='data/JdT-score.csv'
 #Me aserguro que el archivo no exista previamente, para no escribir varias veces los titulos
-if not os.path.exists('data/JdT-score.csv'):
-    with open('data/JdT-score.csv', 'w') as csvfile:
+if not os.path.exists(csv):
+    with open(csv, 'w') as csvfile:
         filewriter = csv.writer(csvfile, delimiter=',')
         filewriter.writerow(['Username', 'Followers', 'Confidence', 'Score_tag', 'Agreement', 'Subjectivity', 'Irony', 'Tweet'])
 #
@@ -55,7 +55,7 @@ for cursor in db.tweets.find():
 
           print (username + ': ' + tweet)
           #payload= "key="+key+"&lang="+lang+"&txt="+txt
-          payload = "key=884a3e5168cf038e1468de90c0a6feab&lang=en&of=json&txt= %s &txtf=plain&url=YOUR_URL_VALUE&doc=YOUR_DOC_VALUE" %(tweet)
+          payload = "key=INTRODUCE_KEY&lang=en&of=json&txt= %s &txtf=plain&url=YOUR_URL_VALUE&doc=YOUR_DOC_VALUE" %(tweet)
           confidence= 0
           #Manejo excepciones por si la conexion da error que siga analizando la base de datos MongoDB
           try:
@@ -82,7 +82,7 @@ for cursor in db.tweets.find():
                             print("\n\n\n\n\n\nError al guardar en la base de datos MongoDB\n\n\n\n\n\n")
 
                       #El parametro a es para "append", para actualizar el csv en vez de sobrescribirlo
-                      with open('data/JdT-score.csv', 'a') as csvfile:
+                      with open(csv, 'a') as csvfile:
                           filewriter = csv.writer(csvfile, delimiter=',')
                           filewriter.writerow([username, followers, confidence, score_tag, agreement, subjectivity, irony, quoted_tweet])
 

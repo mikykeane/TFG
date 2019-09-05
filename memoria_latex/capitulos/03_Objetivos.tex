@@ -1,0 +1,16 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TFG: Vigilancia Tecnológica y Minería de Opiniones en RRSS
+% Escuela Técnica Superior de Ingenierías Informática y de Telecomunicación
+% Realizado por: Miguel Keane Cañizares
+% Contacto: miguekeca@correo.ugr.es 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Objetivos}
+
+Este proyecto se centra en el estudio de las redes sociales, crear tecnologías que nos permitan analizarlas y automatizar dicho análisis todo lo posible. Concretamente se desea desarrollar una serie de scripts en Python, que permitan la descarga de tweets y posterior almacenaje en una base de datos MongoDB\cite{MongoDB}. 
+
+Luego se desea analizar dicha información, con la ayuda de una API externa, MeaningCloud\cite{MeaningCloud}, se obtendrá la diferente polarización de estos tweets, la cual clasificará los tweets en: muy positivos, positivos, neutros, negativos y muy negativos. El resultado de dicho análisis será almacenado en un fichero externo de tipo CSV (cuyas siglas traducidas al español significan: valores separados por comas). Estos ficheros serán de gran utilidad para el posterior estudio de los resultados del análisis de sentimientos. Además, se guardará todo en una colección paralela a la original en la misma base de datos MongoDB, para así tener mejor localizada la información y poder recuperar posibles pérdidas de datos en los ficheros CSV. 
+
+Otro de los objetivos es el desarrollo de un script que cree nubes de palabras con los datos descargados, para así ampliar el estudio de la red social. Ya que estas nubes pueden mostrar en una sola imagen los tópicos más relevantes que han sido discutidos en la red durante la obtención de los tweets. 
+
+Luego además, está el objetivo personal de dominar Python, la cual es una herramienta de gran utilidad cara al futuro laboral. 

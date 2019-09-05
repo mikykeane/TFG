@@ -19,17 +19,18 @@ import os.path
 
 # Conectamos MongoDB la base de datos "TwitterStream"
 connection = MongoClient('localhost', 27017)
-db = connection.TwitterHBO1308
+db = connection.TwitterJdT
 db.tweets.create_index("id", unique=True, dropDups=True)
 collection = db.tweets
 collection2 = db.concepts
 
+path='data/JdT3.csv'
 
 #Me aserguro que el archivo no exista previamente, para no escribir varias veces los titulos
-if not os.path.exists('data/HBO1308-notext.csv'):
-    with open('data/HBO1308-notext.csv', 'w') as csvfile:
+if not os.path.exists(path):
+    with open(path, 'w') as csvfile:
         filewriter = csv.writer(csvfile, delimiter=',')
-        filewriter.writerow(['Username', 'Followers', 'Score_tag'])
+        filewriter.writerow(['Username', 'Followers', 'Score_tag', 'Tweet'])
 
 #
 #cursors = db.collection.find();
@@ -38,11 +39,12 @@ for cursor in db.concepts.find():
       tweet = cursor.get('text')
       username = cursor.get('user')
       followers = cursor.get('followers')
-      
+      quoted_tweet = '"{}"'.format(tweet)
+
       #quoted_tweet = '"{}"'.format(tweet)
       score_tag= cursor.get('score_tag')
       #El parametro a es para "append", para actualizar el csv en vez de sobrescribirlo
-      with open('data/HBO1308-notext.csv', 'a') as csvfile:
+      with open(path, 'a') as csvfile:
 
           filewriter = csv.writer(csvfile, delimiter=',')
-          filewriter.writerow([username, followers,  score_tag])
+          filewriter.writerow([username, followers,  score_tag, quoted_tweet])

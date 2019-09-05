@@ -1,0 +1,70 @@
+\begin{thebibliography}{10}
+
+\bibitem{Brandwatch}
+Giles Palmer.
+\newblock Brandwatch.
+\newblock \texttt{https://www.brandwatch.com/es/}, 2005.
+\newblock Accedido 30-08-2019.
+
+\bibitem{GoogleCloudNaturalLanguage}
+Google Cloud~Natural Language.
+\newblock Alphabet.
+\newblock
+  \texttt{https://cloud.google.com/natural-language/docs/analyzing-sentiment}.
+\newblock Accedido 30-08-2019.
+
+\bibitem{MeaningCloud}
+Meaning Cloud.
+\newblock \texttt{https://www.meaningcloud.com/developer/documentation}.
+\newblock Accedido 30-08-2019.
+
+\bibitem{SocialStreams}
+Social streams.
+\newblock \texttt{https://docs.social-streams.com/}.
+\newblock Accedido 30-08-2019.
+
+\bibitem{PythonTwitter}
+Mike Verdone.
+\newblock Python twitter tools.
+\newblock \texttt{https://pypi.org/project/twitter/}, 2008.
+
+\bibitem{Tweepy}
+Joshua Roesslein.
+\newblock Tweepy.
+\newblock \texttt{https://tweepy.readthedocs.io/}, 2009.
+
+\bibitem{MongoDB}
+MongoBD Inc.
+\newblock Mongodb.
+\newblock \texttt{https://docs.mongodb.com/}, 2009.
+
+\bibitem{Pymongo}
+Mike Dirolf.
+\newblock \texttt{https://api.mongodb.com/python/current/}, 2009.
+
+\bibitem{Numpy}
+Travis Oliphant.
+\newblock Numpy.
+\newblock \texttt{https://numpy.org/doc/1.13/}, 2005.
+
+\bibitem{Pillow}
+Fredik Lundh.
+\newblock Pillow.
+\newblock \texttt{https://pillow.readthedocs.io/en/5.1.x/}, 2009.
+
+\bibitem{Pandas}
+Wes McKinney.
+\newblock Pandas.
+\newblock \texttt{https://pandas.pydata.org/pandas-docs/stable/}, 2008.
+
+\bibitem{Hunter:2007}
+J.~D. Hunter.
+\newblock Matplotlib: A 2d graphics environment.
+\newblock {\em Computing in Science \& Engineering}, 9(3):90--95, 2007.
+
+\bibitem{goossens93}
+Michel Goossens, Frank Mittelbach, and Alexander Samarin.
+\newblock {\em The LaTeX Companion}.
+\newblock Addison-Wesley, Reading, Massachusetts, 1993.
+
+\end{thebibliography}

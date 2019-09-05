@@ -22,30 +22,42 @@ import matplotlib.pyplot as plt
 
 
 
-#
+#Datos que modificar para seleccionar ficheros existentes o nombres del fichero que será creado
+csv="data/JdT.csv"
 
+grafica="img/barraJdT.png"
+modelo="img/rojo.jpg"
+nube="img/jdT-red.png"
 
-"""
+df = pd.read_csv(csv)
+
+#print(df[df['Score_tag'].str.contains("N+")])
+##score = df[df['Score_tag'].str.contains("N+|N|NEU|P|P+")].groupby('Score_tag')
+score = df[~df['Score_tag'].isin(['NONE'])].groupby("Score_tag")
+#score = df.groupby("Score_tag")
+#score.filter( "NONE")
+print(score.describe())
+print(score.mean())
+
 plt.figure(figsize=(15,10))
-score.size().sort_values(ascending=False).plot.bar()
+#score.size().sort_values(ascending=False).plot.bar()
+score.size().plot.bar()
 
 plt.xticks(rotation=50)
 plt.xlabel("Score")
 plt.ylabel("Tweets")
+plt.savefig(grafica, format="png")
 plt.show()
-"""
 
 
-df = pd.read_csv("data/JdT.csv")
 
-#score = df.groupby("Score_tag")
-#print(score.describe())
 
-text = " ".join(text for text in df.Text)
+
+text = " ".join(text for text in df.Tweet)
 
 print("Hay {} palabras en la combinacion de todos los tweets.".format(len(text)))
 
-netflix_mask = np.array(Image.open("img/gotlogo.jpg"))
+netflix_mask = np.array(Image.open(modelo))
 
 
 #netflix_mask= convert_image("logo.png")
@@ -57,7 +69,7 @@ netflix_mask = np.array(Image.open("img/gotlogo.jpg"))
 
 # Create stopword list:
 stopwords = set(STOPWORDS)
-stopwords.update(["Sa4K2Wca8B", "RT", "DNCNwIZDRZ", "12sSdRD08Oo" "amp", "co", "https"])
+stopwords.update(["YouTube", "RT", "DNCNwIZDRZ", "12sSdRD08Oo" "amp", "co", "https"])
 
 # Generate a word cloud image
 #wordcloud = WordCloud(stopwords=stopwords, background_color="white").generate(text)
@@ -73,5 +85,5 @@ plt.figure(figsize=[7,7])
 plt.imshow(wordcloud.recolor(color_func=image_colors), interpolation='bilinear')
 
 plt.axis("off")
-plt.savefig("img/JdTLogo.png", format="png")
+plt.savefig(nube, format="png")
 plt.show()

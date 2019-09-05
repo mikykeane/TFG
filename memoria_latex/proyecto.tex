@@ -62,7 +62,7 @@ pdftitle = {\myTitle},
 pdfsubject = {},
 pdfkeywords = {Redes Sociales, RRSS, WordCloud, MeaningCloud, Twitter, Tweepy, Netflix, HBO, YouTube},
 pdfcreator = {LaTeX con el paquete TeXstudio},
-pdfproducer = {pdflatex}
+pdfproducer = {pdflatex},
 }
 
 %\hyphenation{}
@@ -70,7 +70,9 @@ pdfproducer = {pdflatex}
 
 %\usepackage{doxygen/doxygen}
 \usepackage{pdfpages}
+%\PassOptionsToPackage{hyphens}{url}
 \usepackage{url}
+\usepackage{hyperref}
 \usepackage{colortbl,longtable}
 \usepackage[stable]{footmisc}
 \usepackage{index}
@@ -179,7 +181,7 @@ pdfproducer = {pdflatex}
 }
 \makeatother
 
-%\usepackage{pdfpages}
+\usepackage{pdfpages}
 %\usepackage[pdftex]{graphicx} % PDFLaTeX
 \DeclareGraphicsExtensions{.png,.pdf,.jpg}
 \begin{document}
@@ -188,7 +190,7 @@ pdfproducer = {pdflatex}
 \frontmatter
 \tableofcontents
 \listoffigures
-%\listoftables
+\listoftables
 %
 \mainmatter
 \setlength{\parskip}{5pt}
@@ -197,10 +199,13 @@ pdfproducer = {pdflatex}
 %
 \input{capitulos/02_EspecificacionRequisitos}
 %
-\input{capitulos/03_Planificacion}
+\input{capitulos/03_Objetivos}
+
+\input{capitulos/04_Metodologia}
 
 %\input{capitulos/04_Analisis}
 %
+\input{capitulos/09_Presupuesto}
 \input{capitulos/04_Diseno}
 %
 \input{capitulos/06_Implementacion}
@@ -213,9 +218,9 @@ pdfproducer = {pdflatex}
 %
 %
 \nocite{*}
-\bibliography{bibliografia/bibliografia}\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliography{bibliografia/bibliografia} %\addcontentsline{toc}{chapter}{Bibliografía}
 
-\bibliographystyle{miunsrturl}
+\bibliographystyle{unsrt}
 %
 %\appendix
 %\input{apendices/manual_usuario/manual_usuario}
